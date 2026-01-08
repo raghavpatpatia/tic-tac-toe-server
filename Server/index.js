@@ -1,11 +1,11 @@
-const WebSocket = require("ws");
+const { WebSocketServer } = require("ws");
 const { PORT, TURN_TIME } = require("./config");
 
 const RoomManager = require("./rooms/RoomManager");
 const handleCreateRoom = require("./handlers/CreateRoomHandler");
 const handleJoinRoom = require("./handlers/JoinRoomHandler");
 
-const wss = WebSocket.Server({ port: PORT });
+const wss = new WebSocketServer({ port: PORT });
 const roomManager = new RoomManager(TURN_TIME);
 
 console.log("WebSocket server running on port", PORT);
@@ -14,7 +14,7 @@ wss.on("connection", (ws) => {
 	ws.on("message", (data) => {
 		let msg;
 		try {
-			JSON.parse(data);
+			msg = JSON.parse(data.toString());
 		} catch {
 			return;
 		}
