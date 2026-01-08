@@ -1,9 +1,9 @@
 {
 	"name": "tic-tac-toe-server",
 	"version": "1.0.0",
-	"main": "Server/Server.js",
+	"main": "Server/index.js",
 	"scripts": {
-		"start": "node Server/Server.js"
+		"start": "node Server/index.js"
 	},
 	"dependencies": {
 		"ws": "^8.16.0"
