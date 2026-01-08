@@ -4,7 +4,6 @@ const { PORT, TURN_TIME } = require("./config");
 const RoomManager = require("./rooms/RoomManager");
 const handleCreateRoom = require("./handlers/CreateRoomHandler");
 const handleJoinRoom = require("./handlers/JoinRoomHandler");
-const RoomManager = require("./rooms/RoomManager");
 
 const wss = WebSocket.Server({ port: PORT });
 const roomManager = new RoomManager(TURN_TIME);
