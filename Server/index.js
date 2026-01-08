@@ -19,6 +19,8 @@ wss.on("connection", (ws) => {
 			return;
 		}
 
+		console.log("RECEIVED FROM CLIENT:", msg);
+
 		switch (msg.type) {
 			case "CREATE_ROOM":
 				handleCreateRoom(ws, msg, roomManager);
@@ -27,6 +29,8 @@ wss.on("connection", (ws) => {
 			case "JOIN_ROOM":
 				handleJoinRoom(ws, msg, roomManager);
 				break;
+			default:
+				console.warn("Unknown message type:", msg.type);
 		}
 	});
 
