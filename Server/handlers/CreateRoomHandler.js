@@ -13,7 +13,7 @@ function handleCreateRoom(ws, msg, roomManager) {
 	const opponentMarker = userMarker == "X" ? "O" : "X";
 
 	ws.send(JSON.stringify(roomJoined(roomID, userMarker, opponentMarker)));
-	room.broadcast(gameState(room));
+	// room.broadcast(gameState(room));
 }
 
 module.exports = handleCreateRoom;
