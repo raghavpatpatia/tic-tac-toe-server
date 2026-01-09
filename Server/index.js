@@ -37,4 +37,6 @@ wss.on("connection", (ws) => {
 	ws.on("close", () => {
 		console.log("Client disconnected");
 	});
+
+	console.log("Client connected");
 });
