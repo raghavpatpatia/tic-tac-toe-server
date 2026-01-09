@@ -14,11 +14,11 @@ class Room {
 	}
 
 	addPlayer(socket) {
-		if (!this.players.X) {
+		if (this.players.X === null) {
 			this.players.X = socket;
 			return "X";
 		}
-		if (!this.players.O) {
+		if (this.players.O === null) {
 			this.players.O = socket;
 			return "O";
 		}
