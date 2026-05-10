@@ -1,9 +1,5 @@
 function createEmptyBoard() {
-	return [
-		["", "", ""],
-		["", "", ""],
-		["", "", ""],
-	];
+	return Array(9).fill(null);
 }
 
 module.exports = { createEmptyBoard };

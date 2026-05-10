@@ -25,6 +25,15 @@ class Room {
 		return null;
 	}
 
+	getPlayerMarker(socket) {
+		for (const marker of this.players) {
+			if (this.players[marker] === socket) {
+				return marker;
+			}
+		}
+		return null;
+	}
+
 	broadcast(message) {
 		Object.values(this.players).forEach((p) => {
 			if (p) p.send(JSON.stringify(message));
